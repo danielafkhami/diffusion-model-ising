@@ -4,7 +4,7 @@ from ising_grid import generate_ising_grid
 #Parameters
 temp = 2.269
 size = 32
-sweeps = 10
+sweeps = 2000
 samples = 5000
 
 def generate_dataset(num_samples, size, sweeps, beta):

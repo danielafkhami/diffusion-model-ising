@@ -1,11 +1,13 @@
 import numpy as np
+from numba import njit
 
+@njit
 def generate_ising_grid(size, sweeps, beta):
 
-    grid = np.random.choice([1, -1], size=(size, size))
+    grid = np.random.choice(np.array([1, -1]), size=(size, size))
     steps = sweeps * (size * size)
 
-    for i in range(steps):
+    for _ in range(steps):
 
         x = np.random.randint(0, size)
         y = np.random.randint(0, size)
