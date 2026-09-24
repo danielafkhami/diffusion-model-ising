@@ -1,5 +1,5 @@
 import numpy as np
-from ising_grid import generate_ising_grid
+from ising_grid import generate_ising_grid, seed_numba
 
 #Parameters
 temp = 2.269
@@ -9,7 +9,7 @@ samples = 5000
 
 def generate_dataset(num_samples, size, sweeps, beta):
 
-    np.random.seed(42)
+    seed_numba(42)
     dataset = np.zeros((num_samples, size, size), dtype=np.int8)
 
     for i in range(num_samples):

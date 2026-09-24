@@ -2,6 +2,9 @@ import numpy as np
 from numba import njit
 
 @njit
+def seed_numba(seed): np.random.seed(seed)
+
+@njit
 def generate_ising_grid(size, sweeps, beta):
 
     grid = np.random.choice(np.array([1, -1]), size=(size, size))
